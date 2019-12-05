@@ -1,57 +1,36 @@
 package com.example.configurationproperties.config.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.context.properties.ConstructorBinding;
 
 import java.nio.file.Path;
 
 @ConfigurationProperties(prefix = "data.paths")
-@ConstructorBinding
 public class PathConfigProperties {
-    private final Paths welcomeKit;
-    private final Paths box;
-    private final Paths zone;
+    private Path inboundPath;
+    private Path outboundPath;
+    private String filename;
 
-    public PathConfigProperties(Paths welcomeKit, Paths box, Paths zone) {
-        this.welcomeKit = welcomeKit;
-        this.box = box;
-        this.zone = zone;
+    public Path getInboundPath() {
+        return inboundPath;
     }
 
-    public Paths getWelcomeKit() {
-        return welcomeKit;
+    public void setInboundPath(Path inboundPath) {
+        this.inboundPath = inboundPath;
     }
 
-    public Paths getBox() {
-        return box;
+    public Path getOutboundPath() {
+        return outboundPath;
     }
 
-    public Paths getZone() {
-        return zone;
+    public void setOutboundPath(Path outboundPath) {
+        this.outboundPath = outboundPath;
     }
 
-    public static class Paths {
-        private final Path inboundPath;
-        private final Path outboundPath;
-        private final String filename;
-
-        public Paths(Path inboundPath, Path outboundPath, String filename) {
-            this.inboundPath = inboundPath;
-            this.outboundPath = outboundPath;
-            this.filename = filename;
-        }
-
-        public java.nio.file.Path getInboundPath() {
-            return inboundPath;
-        }
-
-        public java.nio.file.Path getOutboundPath() {
-            return outboundPath;
-        }
-
-        public String getFilename() {
-            return filename;
-        }
+    public String getFilename() {
+        return filename;
     }
 
+    public void setFilename(String filename) {
+        this.filename = filename;
+    }
 }

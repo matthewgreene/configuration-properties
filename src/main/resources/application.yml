@@ -1,6 +1,6 @@
 data:
   paths:
-    welcomeKit:
+    welcome-kit:
       inbound-path: ${welcome-kit-inbound-path}
       outbound-path: ${welcome-kit-outbound-path}
       filename: WELCOME_KIT
